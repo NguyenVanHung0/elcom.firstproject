@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface AuthorService {
     List<AuthorDto> getListAuthor();
-    AuthorDto getAuthorById(Long id) throws Exception;
+    AuthorDto getAuthorById(Long id);
     AuthorDto createAuthor(AuthorDto authorDto);
     AuthorDto updateAuthor(AuthorDto authorDto, Long id);
     AuthorDto deleteAuthor(Long id);

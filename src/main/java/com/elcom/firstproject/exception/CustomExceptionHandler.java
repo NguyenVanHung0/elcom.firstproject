@@ -20,7 +20,7 @@ public class CustomExceptionHandler {
     
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public void handleUnwantedException(Exception e) {
-        e.printStackTrace();
+    public ErrorResponse handleUnwantedException(Exception e) {
+         return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
     }
 }

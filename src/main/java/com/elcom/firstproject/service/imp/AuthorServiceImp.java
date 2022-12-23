@@ -42,7 +42,7 @@ public class AuthorServiceImp implements AuthorService {
     }
 
     @Override
-    public AuthorDto getAuthorById(Long id) throws Exception {
+    public AuthorDto getAuthorById(Long id){
         AuthorDto authorDto = new AuthorDto();
         Author author = authorRepository.findById(id).get();
         if (author != null) {
