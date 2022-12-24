@@ -5,7 +5,6 @@
 package com.elcom.firstproject.controller;
 
 import com.elcom.firstproject.dto.AuthorDto;
-import com.elcom.firstproject.model.Author;
 import com.elcom.firstproject.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +28,7 @@ public class AuthorController {
     @Autowired
     AuthorService authorService;
     
+   
     @GetMapping("")
     public ResponseEntity<?> getListAuthor(){
         return ResponseEntity.ok(authorService.getListAuthor());

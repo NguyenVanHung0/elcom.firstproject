@@ -1,7 +1,10 @@
 package com.elcom.firstproject.service.imp;
 
 import com.elcom.firstproject.convert.Mapper;
+import com.elcom.firstproject.dto.AuthorWithBookCount;
 import com.elcom.firstproject.dto.BookDto;
+import com.elcom.firstproject.dto.CategoryWithBookCount;
+import com.elcom.firstproject.dto.FirstTextWithBookCount;
 import com.elcom.firstproject.exception.NoSuchElementException;
 import com.elcom.firstproject.model.Author;
 import com.elcom.firstproject.model.Book;
@@ -13,6 +16,8 @@ import com.elcom.firstproject.service.BookService;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +35,9 @@ public class BookServiceImp implements BookService {
 
     @Autowired
     Mapper mapper;
+    
+    @PersistenceContext
+    public EntityManager em;
 
     @Override
     public List<BookDto> getListBook() {
@@ -51,7 +59,7 @@ public class BookServiceImp implements BookService {
             bookDto = mapper.toBookDto(book);
             return bookDto;
         }
-
+        // Ném ra NoSuchElementException
         throw new NoSuchElementException("Sach khong ton tai");
 
     }
@@ -86,6 +94,7 @@ public class BookServiceImp implements BookService {
             bookRepository.save(newBook);
             return mapper.toBookDto(newBook);
         }
+        // Ném ra NoSuchElementException
         throw new NoSuchElementException("Sach khong ton tai");
     }
 
@@ -96,22 +105,42 @@ public class BookServiceImp implements BookService {
             bookRepository.deleteById(id);
             return mapper.toBookDto(book);
         }
-
+        // Ném ra NoSuchElementException
         throw new NoSuchElementException("Sach khong ton tai");
     }
 
     @Override
-    public List<Object> getCountBookGroupByAuthor() {
-        return bookRepository.getCountBookGroupByAuthor();
+    public List<AuthorWithBookCount> AuthorWithBookCount() {
+        
+        //Thực hiện native query đã được định nghĩa (Đếm số lượng sách theo tác giả)
+        List<AuthorWithBookCount> AuthorWithBookCount = em
+            .createNamedQuery("AuthorWithBookCount")
+            .getResultList();
+                
+        return AuthorWithBookCount;
     }
 
     @Override
-    public List<Object> getCountBookGroupByCategory() {
-        return bookRepository.getCountBookGroupByCategory();
+    public List<CategoryWithBookCount> CategoryWithBookCount() {
+        
+        //Thực hiện native query đã được định nghĩa (Đếm số lượng sách theo thể loại)
+        List<CategoryWithBookCount> CategoryWithBookCount = em
+                .createNamedQuery("CategoryWithBookCount")
+                .getResultList();
+        return CategoryWithBookCount;
     }
 
     @Override
-    public List<Object> getCountBookGroupByFirstText() {
-        return bookRepository.getCountBookGroupByFirstText();
+    public List<FirstTextWithBookCount> FirstTextWithBookCount() {
+        
+        //Thực hiện native query đã được định nghĩa (Đếm số lượng sách theo chữ cái đầu)
+         List<FirstTextWithBookCount> FirstTextWithBookCount = em
+                .createNamedQuery("FirstTextWithBookCount")
+                .getResultList();
+        return FirstTextWithBookCount;
     }
+
+
+
+   
 }

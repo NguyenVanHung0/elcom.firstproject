@@ -5,7 +5,6 @@
 package com.elcom.firstproject.service;
 
 import com.elcom.firstproject.dto.AuthorDto;
-import com.elcom.firstproject.model.Author;
 import java.util.List;
 
 /**

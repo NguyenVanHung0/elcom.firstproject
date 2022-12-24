@@ -47,16 +47,16 @@ public class BookController {
 
     @GetMapping("count/author")
     public ResponseEntity<?> getCountBookByAuthor() {
-        return ResponseEntity.ok(bookService.getCountBookGroupByAuthor());
+        return ResponseEntity.ok(bookService.AuthorWithBookCount());
     }
 
     @GetMapping("count/category")
     public ResponseEntity<?> getCountBookByCategory() {
-        return ResponseEntity.ok(bookService.getCountBookGroupByCategory());
+        return ResponseEntity.ok(bookService.CategoryWithBookCount());
     }
 
     @GetMapping("count/firsttext")
     public ResponseEntity<?> getCountBookByFirstText() {
-        return ResponseEntity.ok(bookService.getCountBookGroupByFirstText());
+        return ResponseEntity.ok(bookService.FirstTextWithBookCount());
     }
 }

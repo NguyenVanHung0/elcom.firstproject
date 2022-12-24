@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.elcom.firstproject.service.imp;
 
 import com.elcom.firstproject.convert.Mapper;
@@ -16,10 +13,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author ADMIN
- */
+
 @Service
 public class AuthorServiceImp implements AuthorService {
 
@@ -49,6 +43,8 @@ public class AuthorServiceImp implements AuthorService {
             authorDto = mapper.toAuthorDto(author);
             return authorDto;
         }
+        
+        // Ném ra NoSuchElementException
         throw new NoSuchElementException("Tac gia khong ton tai");
     }
 
@@ -74,6 +70,8 @@ public class AuthorServiceImp implements AuthorService {
             authorRepository.save(newAuthor);
             return mapper.toAuthorDto(newAuthor);
         }
+        
+        // Ném ra NoSuchElementException
         throw new NoSuchElementException("Tac gia khong ton tai");
     }
 
@@ -84,6 +82,8 @@ public class AuthorServiceImp implements AuthorService {
             authorRepository.deleteById(id);
             return mapper.toAuthorDto(author);
         }
+        
+        // Ném ra NoSuchElementException
         throw new NoSuchElementException("Tac gia khong ton tai");
     }
 
