@@ -10,6 +10,8 @@ import com.elcom.firstproject.dto.CategoryDto;
 import com.elcom.firstproject.model.Author;
 import com.elcom.firstproject.model.Book;
 import com.elcom.firstproject.model.Category;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,32 +23,24 @@ public class Mapper {
             return null;
         }
         Author author = new Author();
-//        author.setCreatedBy(authorDto.getCreatedBy());
-//        author.setCreatedDate(authorDto.getCreatedDate());
-//        author.setModifiedBy(authorDto.getModifiedBy());
-//        author.setModifiedDate(authorDto.getModifiedDate());
         author.setName(authorDto.getName());
         author.setNote(authorDto.getNote());
         author.setWebsite(authorDto.getWebsite());
-        author.setBooks(authorDto.getBooks());
         return author;
     }
+
 
     public Author toAuthor(Author author, AuthorDto authorDto) {
         if (authorDto == null) {
             return null;
         }
-        
-//        author.setCreatedBy(authorDto.getCreatedBy());
-//        author.setCreatedDate(authorDto.getCreatedDate());
-//        author.setModifiedBy(authorDto.getModifiedBy());
-//        author.setModifiedDate(authorDto.getModifiedDate());
+
         author.setName(authorDto.getName());
         author.setNote(authorDto.getNote());
         author.setWebsite(authorDto.getWebsite());
-        author.setBooks(authorDto.getBooks());
         return author;
     }
+
 
     public AuthorDto toAuthorDto(Author author) {
         if (author == null) {
@@ -61,9 +55,14 @@ public class Mapper {
         authorDto.setName(author.getName());
         authorDto.setNote(author.getNote());
         authorDto.setWebsite(author.getWebsite());
-        authorDto.setBooks(author.getBooks());
+        List<Long> books = new ArrayList<>();
+        for(Book book : author.getBooks()){
+            books.add(book.getId());
+        }
+        authorDto.setBooks(books);
         return authorDto;
     }
+
 
     // Category
     public Category toCategory(CategoryDto categoryDto) {
@@ -71,27 +70,19 @@ public class Mapper {
             return null;
         }
         Category category = new Category();
-//        category.setCreatedBy(categoryDto.getCreatedBy());
-//        category.setCreatedDate(categoryDto.getCreatedDate());
-//        category.setModifiedBy(categoryDto.getModifiedBy());
-//        category.setModifiedDate(categoryDto.getModifiedDate());
         category.setName(categoryDto.getName());
-        category.setBooks(categoryDto.getBooks());
         return category;
     }
+
 
     public Category toCategory(Category category, CategoryDto categoryDto) {
         if (categoryDto == null) {
             return null;
         }
-//        category.setCreatedBy(categoryDto.getCreatedBy());
-//        category.setCreatedDate(categoryDto.getCreatedDate());
-//        category.setModifiedBy(categoryDto.getModifiedBy());
-//        category.setModifiedDate(categoryDto.getModifiedDate());
         category.setName(categoryDto.getName());
-        category.setBooks(categoryDto.getBooks());
         return category;
     }
+
 
     public CategoryDto toCategoryDto(Category category) {
         if (category == null) {
@@ -104,9 +95,14 @@ public class Mapper {
         categoryDto.setModifiedBy(category.getModifiedBy());
         categoryDto.setModifiedDate(category.getModifiedDate());
         categoryDto.setName(category.getName());
-        categoryDto.setBooks(category.getBooks());
+        List<Long> books = new ArrayList<>();
+        for(Book book : category.getBooks()){
+            books.add(book.getId());
+        }
+        categoryDto.setBooks(books);
         return categoryDto;
     }
+
 
     // Book
     public Book toBook(BookDto bookDto) {
@@ -114,31 +110,25 @@ public class Mapper {
             return null;
         }
         Book book = new Book();
-//        book.setCreatedBy(bookDto.getCreatedBy());
-//        book.setCreatedDate(bookDto.getCreatedDate());
-//        book.setModifiedBy(bookDto.getModifiedBy());
-//        book.setModifiedDate(bookDto.getModifiedDate());
         book.setNamXB(bookDto.getNamXB());
         book.setName(bookDto.getName());
         book.setNhaXB(bookDto.getNhaXB());
         book.setFirstText(bookDto.getFirstText());
         return book;
     }
+
     
     public Book toBook(Book book, BookDto bookDto) {
         if (bookDto == null) {
             return null;
         }
-//        book.setCreatedBy(bookDto.getCreatedBy());
-//        book.setCreatedDate(bookDto.getCreatedDate());
-//        book.setModifiedBy(bookDto.getModifiedBy());
-//        book.setModifiedDate(bookDto.getModifiedDate());
         book.setNamXB(bookDto.getNamXB());
         book.setName(bookDto.getName());
         book.setNhaXB(bookDto.getNhaXB());
         book.setFirstText(bookDto.getFirstText());
         return book;
     }
+
     
     public BookDto toBookDto(Book book) {
         if (book == null) {
@@ -158,4 +148,5 @@ public class Mapper {
         bookDto.setCategoryId(book.getCategory().getId());
         return bookDto;
     }
+
 }

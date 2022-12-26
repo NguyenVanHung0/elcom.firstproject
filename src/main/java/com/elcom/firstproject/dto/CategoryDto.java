@@ -17,5 +17,5 @@ public class CategoryDto extends BaseDto{
 
     private String name;
     
-    private List<Book> books = new ArrayList<>();
+    private List<Long> books = new ArrayList<>();
 }

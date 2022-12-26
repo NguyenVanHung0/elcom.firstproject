@@ -29,6 +29,6 @@ public class AuthorDto extends BaseDto{
     
     private String note;
     
-    private List<Book> books = new ArrayList<>();
+    private List<Long> books = new ArrayList<>();
     
 }

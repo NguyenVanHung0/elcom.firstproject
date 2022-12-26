@@ -35,7 +35,7 @@ public class CategoryServiceImp implements CategoryService {
 
     @Override
     public CategoryDto getCategoryById(Long id) {
-        Category category = categoryRepository.findById(id).get();
+        Category category = categoryRepository.findById(id).orElse(null);
         CategoryDto categoryDto = new CategoryDto();
         if(category != null){
             categoryDto = mapper.toCategoryDto(category);
@@ -57,7 +57,7 @@ public class CategoryServiceImp implements CategoryService {
 
     @Override
     public CategoryDto updateCategory(CategoryDto categoryDto, Long id) {
-        Category oldCategory = categoryRepository.findById(id).get();
+        Category oldCategory = categoryRepository.findById(id).orElse(null);
         Category category = new Category();
         if(oldCategory != null){
             category = mapper.toCategory(oldCategory, categoryDto);
@@ -71,7 +71,7 @@ public class CategoryServiceImp implements CategoryService {
 
     @Override
     public CategoryDto deleteCategory(Long id) {
-        Category category = categoryRepository.findById(id).get();
+        Category category = categoryRepository.findById(id).orElse(null);
         if(category != null){
             categoryRepository.deleteById(id);
             return mapper.toCategoryDto(category);

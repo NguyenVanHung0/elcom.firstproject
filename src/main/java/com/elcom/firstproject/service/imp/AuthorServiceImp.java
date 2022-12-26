@@ -38,7 +38,7 @@ public class AuthorServiceImp implements AuthorService {
     @Override
     public AuthorDto getAuthorById(Long id){
         AuthorDto authorDto = new AuthorDto();
-        Author author = authorRepository.findById(id).get();
+        Author author = authorRepository.findById(id).orElse(null);
         if (author != null) {
             authorDto = mapper.toAuthorDto(author);
             return authorDto;
@@ -61,7 +61,7 @@ public class AuthorServiceImp implements AuthorService {
 
     @Override
     public AuthorDto updateAuthor(AuthorDto authorDto, Long id) {
-        Author oldAuthor = authorRepository.findById(id).get();
+        Author oldAuthor = authorRepository.findById(id).orElse(null);
         Author newAuthor = new Author();
         if (oldAuthor != null) {
             newAuthor = mapper.toAuthor(oldAuthor, authorDto);
@@ -77,7 +77,7 @@ public class AuthorServiceImp implements AuthorService {
 
     @Override
     public AuthorDto deleteAuthor(Long id) {
-        Author author = authorRepository.findById(id).get();
+        Author author = authorRepository.findById(id).orElse(null);
         if (author != null) {
             authorRepository.deleteById(id);
             return mapper.toAuthorDto(author);

@@ -53,7 +53,7 @@ public class BookServiceImp implements BookService {
 
     @Override
     public BookDto getBookById(Long id) {
-        Book book = bookRepository.findById(id).get();
+        Book book = bookRepository.findById(id).orElse(null);
         BookDto bookDto = new BookDto();
         if (book != null) {
             bookDto = mapper.toBookDto(book);
@@ -69,8 +69,14 @@ public class BookServiceImp implements BookService {
         Book book = new Book();
         if (bookDto != null) {
             book = mapper.toBook(bookDto);
-            Category category = categoryRepository.findById(bookDto.getCategoryId()).get();
-            Author author = authorRepository.findById(bookDto.getAuthorId()).get();
+            Category category = categoryRepository.findById(bookDto.getCategoryId()).orElse(null);
+            Author author = authorRepository.findById(bookDto.getAuthorId()).orElse(null);
+            if(category == null){
+                throw new NoSuchElementException("The loai khong ton tai");
+            }
+            if(author == null){
+                throw new NoSuchElementException("Tac gia khong ton tai");
+            }
             book.setAuthor(author);
             book.setCategory(category);
             book.setCreatedDate(new Date());
@@ -81,13 +87,19 @@ public class BookServiceImp implements BookService {
 
     @Override
     public BookDto updateBook(Long id, BookDto bookDto) {
-        Book oldBook = bookRepository.findById(id).get();
+        Book oldBook = bookRepository.findById(id).orElse(null);
         Book newBook = new Book();
         if (oldBook != null) {
             newBook = mapper.toBook(oldBook, bookDto);
             newBook.setId(id);
-            Category category = categoryRepository.findById(bookDto.getCategoryId()).get();
-            Author author = authorRepository.findById(bookDto.getAuthorId()).get();
+            Category category = categoryRepository.findById(bookDto.getCategoryId()).orElse(null);
+            Author author = authorRepository.findById(bookDto.getAuthorId()).orElse(null);
+            if(category == null){
+                throw new NoSuchElementException("The loai khong ton tai");
+            }
+            if(author == null){
+                throw new NoSuchElementException("Tac gia khong ton tai");
+            }
             newBook.setCategory(category);
             newBook.setAuthor(author);
             newBook.setModifiedDate(new Date());
@@ -100,7 +112,7 @@ public class BookServiceImp implements BookService {
 
     @Override
     public BookDto deleteBook(Long id) {
-        Book book = bookRepository.findById(id).get();
+        Book book = bookRepository.findById(id).orElse(null);
         if (book != null) {
             bookRepository.deleteById(id);
             return mapper.toBookDto(book);
@@ -140,7 +152,4 @@ public class BookServiceImp implements BookService {
         return FirstTextWithBookCount;
     }
 
-
-
-   
 }
