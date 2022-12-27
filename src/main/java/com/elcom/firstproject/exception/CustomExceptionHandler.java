@@ -20,6 +20,13 @@ public class CustomExceptionHandler {
     }
     
     // Xử lý các exception chưa được định nghĩa
+    @ExceptionHandler(ValidationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleValidationException(Exception e) {
+         return new ErrorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
+    
+    // Xử lý các exception chưa được định nghĩa
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorResponse handleUnwantedException(Exception e) {

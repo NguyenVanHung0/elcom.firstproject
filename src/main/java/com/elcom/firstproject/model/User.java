@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.elcom.firstproject.dto;
+package com.elcom.firstproject.model;
 
 import com.elcom.firstproject.model.Base;
 import javax.persistence.Column;
@@ -25,4 +25,7 @@ public class User extends Base{
     
     @Column
     private String password;
+    
+    @Column
+    private String role;
 }
