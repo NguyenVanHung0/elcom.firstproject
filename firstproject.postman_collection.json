@@ -13,7 +13,13 @@
 					"name": "getListAuthor",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjcyMTA4MzAwLCJleHAiOjE2NzIxMDgzMDV9.37GCP0_Fw17TM4sjvyQNc5wbiLDl8m0LVNFvhVDEulFspmYhAz0sEFJAu29JTQ0PGtPYgbiyAwQo2fwlReSDLw",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:8080/author",
 							"host": [
@@ -53,7 +59,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"createdBy\": null,\r\n    \"modifiedBy\": null,\r\n    \"createdDate\": null,\r\n    \"modifiedDate\": null,\r\n    \"name\": \"Nguyen Van E\",\r\n    \"website\": \"eeee\",\r\n    \"note\": \"tac gia e\",\r\n    \"books\": []\r\n}",
+							"raw": "{\r\n    \"name\": \"Nguyen Van Hung\",\r\n    \"website\": \"hung.com.vn\",\r\n    \"note\": \"chuyen manga\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -80,7 +86,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"createdBy\": null,\r\n    \"modifiedBy\": null,\r\n    \"createdDate\": null,\r\n    \"modifiedDate\": null,\r\n    \"name\": \"Nguyen Van ee\",\r\n    \"website\": \"ee\",\r\n    \"note\": \"tac gia e\",\r\n    \"books\": []\r\n}",
+							"raw": "{\r\n    \"name\": \"Nguyen Viet Hoang\",\r\n    \"website\": \"hoang.com.vn\",\r\n    \"note\": \"chuyen cuoi\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -88,14 +94,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/author/5",
+							"raw": "localhost:8080/author/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"author",
-								"5"
+								"2"
 							]
 						}
 					},
@@ -107,14 +113,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/author/5",
+							"raw": "localhost:8080/author/3",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"author",
-								"5"
+								"3"
 							]
 						}
 					},
@@ -149,14 +155,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/category/1",
+							"raw": "localhost:8080/category/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"category",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -169,7 +175,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"createdBy\": null,\r\n    \"modifiedBy\": null,\r\n    \"createdDate\": null,\r\n    \"name\": \"category4\",\r\n    \"books\": [],\r\n    \"modifiedDate\": null\r\n}",
+							"raw": "{\r\n    \"name\": \"truyen cuoi\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -196,7 +202,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"createdBy\": null,\r\n    \"modifiedBy\": null,\r\n    \"createdDate\": null,\r\n    \"name\": \"category44\",\r\n    \"books\": [],\r\n    \"modifiedDate\": null\r\n}",
+							"raw": "{\r\n    \"name\": \"aaa\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -204,14 +210,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/category/4",
+							"raw": "localhost:8080/category/3",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"category",
-								"4"
+								"3"
 							]
 						}
 					},
@@ -223,14 +229,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/category/4",
+							"raw": "localhost:8080/category/3",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"category",
-								"4"
+								"3"
 							]
 						}
 					},
@@ -285,7 +291,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"createdBy\": null,\r\n    \"modifiedBy\": null,\r\n    \"createdDate\": null,\r\n    \"name\": \"sach4\",\r\n    \"nhaXB\": \"Kim dong\",\r\n    \"namXB\": \"2001\",\r\n    \"authorId\": 3,\r\n    \"categoryId\": 2,\r\n    \"modifiedDate\": null\r\n}",
+							"raw": "{\r\n    \"name\": \"naruto\",\r\n    \"nhaXB\": \"Kim dong\",\r\n    \"namXB\": \"1999\",\r\n    \"firstText\": \"n\",\r\n    \"authorId\": 1,\r\n    \"categoryId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -312,7 +318,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"createdBy\": null,\r\n    \"modifiedBy\": null,\r\n    \"createdDate\": null,\r\n    \"name\": \"sach44\",\r\n    \"nhaXB\": \"Kim dong1\",\r\n    \"namXB\": \"2001\",\r\n    \"authorId\": 4,\r\n    \"categoryId\": 2,\r\n    \"modifiedDate\": null\r\n}",
+							"raw": "{\r\n    \"name\": \"onepiece2\",\r\n    \"nhaXB\": \"Kim dong\",\r\n    \"namXB\": \"1999\",\r\n    \"firstText\": \"o\",\r\n    \"authorId\": 2,\r\n    \"categoryId\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -320,14 +326,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/book/4",
+							"raw": "localhost:8080/book/3",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"book",
-								"4"
+								"3"
 							]
 						}
 					},
@@ -339,14 +345,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/book/1",
+							"raw": "localhost:8080/book/3",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"book",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -407,6 +413,70 @@
 								"book",
 								"count",
 								"firsttext"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hung\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Long\",\r\n    \"password\": \"12345\",\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
 							]
 						}
 					},
