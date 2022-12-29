@@ -1,7 +1,7 @@
 package com.elcom.firstproject.controller;
 
-import com.elcom.firstproject.dto.BookDto;
-import com.elcom.firstproject.service.BookService;
+import com.elcom.firstproject.mysql.dto.BookDto;
+import com.elcom.firstproject.mysql.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

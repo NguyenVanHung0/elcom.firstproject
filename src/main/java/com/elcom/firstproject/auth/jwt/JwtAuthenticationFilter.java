@@ -4,7 +4,7 @@
  */
 package com.elcom.firstproject.auth.jwt;
 
-import com.elcom.firstproject.service.imp.CustomUserDetailServiceImp;
+import com.elcom.firstproject.mysql.service.imp.CustomUserDetailServiceImp;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

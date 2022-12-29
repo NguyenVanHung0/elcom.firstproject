@@ -1,7 +1,7 @@
 
 package com.elcom.firstproject.auth;
 
-import com.elcom.firstproject.model.User;
+import com.elcom.firstproject.mysql.model.User;
 import java.util.Collection;
 import java.util.Collections;
 import lombok.Getter;

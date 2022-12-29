@@ -4,8 +4,8 @@
  */
 package com.elcom.firstproject.controller;
 
-import com.elcom.firstproject.dto.CategoryDto;
-import com.elcom.firstproject.service.CategoryService;
+import com.elcom.firstproject.mysql.dto.CategoryDto;
+import com.elcom.firstproject.mysql.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

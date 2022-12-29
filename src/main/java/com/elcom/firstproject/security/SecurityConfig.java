@@ -2,7 +2,7 @@
 package com.elcom.firstproject.security;
 
 import com.elcom.firstproject.auth.jwt.JwtAuthenticationFilter;
-import com.elcom.firstproject.service.imp.CustomUserDetailServiceImp;
+import com.elcom.firstproject.mysql.service.imp.CustomUserDetailServiceImp;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

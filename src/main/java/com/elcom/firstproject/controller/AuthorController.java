@@ -4,8 +4,8 @@
  */
 package com.elcom.firstproject.controller;
 
-import com.elcom.firstproject.dto.AuthorDto;
-import com.elcom.firstproject.service.AuthorService;
+import com.elcom.firstproject.mysql.dto.AuthorDto;
+import com.elcom.firstproject.mysql.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

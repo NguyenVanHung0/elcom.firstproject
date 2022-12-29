@@ -4,8 +4,8 @@
  */
 package com.elcom.firstproject.controller;
 
-import com.elcom.firstproject.dto.UserDto;
-import com.elcom.firstproject.service.UserService;
+import com.elcom.firstproject.mysql.dto.UserDto;
+import com.elcom.firstproject.mysql.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;

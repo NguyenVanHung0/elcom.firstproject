@@ -1,0 +1,32 @@
+29-12-2022 10:17:58.135 [restartedMain] INFO  c.e.f.FirstprojectApplication.logStarting - Starting FirstprojectApplication using Java 11.0.16.1 on DESKTOP-VJRT5LB with PID 14716 (D:\Elcom\firstproject - bannhap\target\classes started by ADMIN in D:\Elcom\firstproject - bannhap)
+29-12-2022 10:17:58.143 [restartedMain] INFO  c.e.f.FirstprojectApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+29-12-2022 10:17:58.354 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+29-12-2022 10:17:58.355 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+29-12-2022 10:18:00.704 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-12-2022 10:18:00.906 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 182 ms. Found 4 JPA repository interfaces.
+29-12-2022 10:18:00.913 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-12-2022 10:18:00.916 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interfaces.
+29-12-2022 10:18:04.763 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+29-12-2022 10:18:04.797 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+29-12-2022 10:18:04.798 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.70]
+29-12-2022 10:18:05.217 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+29-12-2022 10:18:05.223 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 6866 ms
+29-12-2022 10:18:05.764 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-12-2022 10:18:07.046 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: mysql]
+29-12-2022 10:18:07.202 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.14.Final
+29-12-2022 10:18:07.768 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29-12-2022 10:18:08.430 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+29-12-2022 10:18:09.381 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+29-12-2022 10:18:09.425 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL92Dialect
+29-12-2022 10:18:11.706 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-12-2022 10:18:11.780 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'mysql'
+29-12-2022 10:18:12.098 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: postgresql]
+29-12-2022 10:18:12.463 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+29-12-2022 10:18:13.097 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+29-12-2022 10:18:13.104 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL92Dialect
+29-12-2022 10:18:13.247 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-12-2022 10:18:13.248 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'postgresql'
+29-12-2022 10:18:16.753 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76593cb4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@299a6727, org.springframework.security.web.context.SecurityContextPersistenceFilter@5da9029a, org.springframework.security.web.header.HeaderWriterFilter@6af1da5e, org.springframework.web.filter.CorsFilter@4ea02020, org.springframework.security.web.authentication.logout.LogoutFilter@4f87ec7e, com.elcom.firstproject.auth.jwt.JwtAuthenticationFilter@39fe0e13, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52b634d3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6930f5d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f59f5b9, org.springframework.security.web.session.SessionManagementFilter@28dd166f, org.springframework.security.web.access.ExceptionTranslationFilter@48df7d6b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f169be3]
+29-12-2022 10:18:18.707 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+29-12-2022 10:18:18.882 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+29-12-2022 10:18:18.901 [restartedMain] INFO  c.e.f.FirstprojectApplication.logStarted - Started FirstprojectApplication in 22.257 seconds (JVM running for 23.617)

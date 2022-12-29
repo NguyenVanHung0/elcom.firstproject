@@ -4,14 +4,16 @@
  */
 package com.elcom.firstproject.convert;
 
-import com.elcom.firstproject.dto.AuthorDto;
-import com.elcom.firstproject.dto.BookDto;
-import com.elcom.firstproject.dto.CategoryDto;
-import com.elcom.firstproject.dto.UserDto;
-import com.elcom.firstproject.model.Author;
-import com.elcom.firstproject.model.Book;
-import com.elcom.firstproject.model.Category;
-import com.elcom.firstproject.model.User;
+import com.elcom.firstproject.mysql.dto.AuthorDto;
+import com.elcom.firstproject.mysql.dto.BookDto;
+import com.elcom.firstproject.mysql.dto.CategoryDto;
+import com.elcom.firstproject.mysql.dto.UserDto;
+import com.elcom.firstproject.mysql.model.Author;
+import com.elcom.firstproject.mysql.model.Book;
+import com.elcom.firstproject.mysql.model.Category;
+import com.elcom.firstproject.mysql.model.User;
+import com.elcom.firstproject.postgresql.dto.EmployeeDto;
+import com.elcom.firstproject.postgresql.model.Employee;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
@@ -176,6 +178,47 @@ public class Mapper {
         userDto.setModifiedBy(user.getModifiedBy());
         userDto.setModifiedDate(user.getModifiedDate());
         return userDto;
+    }
+
+    //Employee
+    public Employee toEmployee(EmployeeDto employeeDto) {
+        if (employeeDto == null) {
+            return null;
+        }
+        Employee employee = new Employee();
+        employee.setName(employeeDto.getName());
+        employee.setBirthDay(employeeDto.getBirthDay());
+        employee.setAddress(employeeDto.getAddress());
+        employee.setPhone(employeeDto.getPhone());
+        return employee;
+    }
+    
+     public Employee toEmployee(Employee employee, EmployeeDto employeeDto) {
+        if (employeeDto == null) {
+            return null;
+        }
+        employee.setName(employeeDto.getName());
+        employee.setBirthDay(employeeDto.getBirthDay());
+        employee.setAddress(employeeDto.getAddress());
+        employee.setPhone(employeeDto.getPhone());
+        return employee;
+    }
+     
+     public EmployeeDto toEmployeeDto(Employee employee) {
+        if (employee == null) {
+            return null;
+        }
+        EmployeeDto employeeDto = new EmployeeDto();
+        employeeDto.setId(employee.getId());
+        employeeDto.setName(employee.getName());
+        employeeDto.setBirthDay(employee.getBirthDay());
+        employeeDto.setAddress(employee.getAddress());
+        employeeDto.setPhone(employee.getPhone());
+        employeeDto.setCreatedBy(employee.getCreatedBy());
+        employeeDto.setCreatedDate(employee.getCreatedDate());
+        employeeDto.setModifiedBy(employee.getModifiedBy());
+        employeeDto.setModifiedDate(employee.getModifiedDate());
+        return employeeDto;
     }
 
 }
