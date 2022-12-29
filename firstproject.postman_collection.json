@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "d6191979-069c-4042-b6a3-6e39c3d46ec1",
 		"name": "firstproject",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "18801003"
 	},
 	"item": [
@@ -17,19 +17,11 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjcyMTA4MzAwLCJleHAiOjE2NzIxMDgzMDV9.37GCP0_Fw17TM4sjvyQNc5wbiLDl8m0LVNFvhVDEulFspmYhAz0sEFJAu29JTQ0PGtPYgbiyAwQo2fwlReSDLw",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
-						"url": {
-							"raw": "localhost:8080/author",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"author"
-							]
-						}
+						"url": "localhost:8080/author"
 					},
 					"response": []
 				},
@@ -38,17 +30,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/author/4",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"author",
-								"4"
-							]
-						}
+						"url": "localhost:8080/author/4"
 					},
 					"response": []
 				},
@@ -66,16 +48,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/author",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"author"
-							]
-						}
+						"url": "localhost:8080/author"
 					},
 					"response": []
 				},
@@ -93,17 +66,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/author/2",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"author",
-								"2"
-							]
-						}
+						"url": "localhost:8080/author/2"
 					},
 					"response": []
 				},
@@ -112,17 +75,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/author/3",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"author",
-								"3"
-							]
-						}
+						"url": "localhost:8080/author/3"
 					},
 					"response": []
 				}
@@ -136,16 +89,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/category",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"category"
-							]
-						}
+						"url": "localhost:8080/category"
 					},
 					"response": []
 				},
@@ -154,17 +98,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/category/2",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"category",
-								"2"
-							]
-						}
+						"url": "localhost:8080/category/2"
 					},
 					"response": []
 				},
@@ -182,16 +116,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/category",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"category"
-							]
-						}
+						"url": "localhost:8080/category"
 					},
 					"response": []
 				},
@@ -209,17 +134,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/category/3",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"category",
-								"3"
-							]
-						}
+						"url": "localhost:8080/category/3"
 					},
 					"response": []
 				},
@@ -228,17 +143,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/category/3",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"category",
-								"3"
-							]
-						}
+						"url": "localhost:8080/category/3"
 					},
 					"response": []
 				}
@@ -252,16 +157,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/book",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"book"
-							]
-						}
+						"url": "localhost:8080/book"
 					},
 					"response": []
 				},
@@ -270,17 +166,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/book/2",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"book",
-								"2"
-							]
-						}
+						"url": "localhost:8080/book/2"
 					},
 					"response": []
 				},
@@ -298,16 +184,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/book",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"book"
-							]
-						}
+						"url": "localhost:8080/book"
 					},
 					"response": []
 				},
@@ -325,17 +202,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/book/3",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"book",
-								"3"
-							]
-						}
+						"url": "localhost:8080/book/3"
 					},
 					"response": []
 				},
@@ -344,17 +211,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/book/3",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"book",
-								"3"
-							]
-						}
+						"url": "localhost:8080/book/3"
 					},
 					"response": []
 				},
@@ -363,18 +220,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/book/count/category",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"book",
-								"count",
-								"category"
-							]
-						}
+						"url": "localhost:8080/book/count/category"
 					},
 					"response": []
 				},
@@ -383,18 +229,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/book/count/author",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"book",
-								"count",
-								"author"
-							]
-						}
+						"url": "localhost:8080/book/count/author"
 					},
 					"response": []
 				},
@@ -403,18 +238,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/book/count/firsttext",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"book",
-								"count",
-								"firsttext"
-							]
-						}
+						"url": "localhost:8080/book/count/firsttext"
 					},
 					"response": []
 				}
@@ -437,16 +261,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/login",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"login"
-							]
-						}
+						"url": "localhost:8080/login"
 					},
 					"response": []
 				}
@@ -462,23 +277,37 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Long\",\r\n    \"password\": \"12345\",\r\n    \"role\": \"USER\"\r\n}",
+							"raw": "{\r\n    \"username\": \"Viet\",\r\n    \"password\": \"viet\",\r\n    \"role\": \"ADMIN\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/user",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"user"
-							]
-						}
+						"url": "localhost:8080/user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "createEmployee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nguyen Van A\",\r\n    \"birth_day\": null,\r\n    \"phone\": \"0123456789\",\r\n    \"address\": \"Nam Dinh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/employee"
 					},
 					"response": []
 				}
