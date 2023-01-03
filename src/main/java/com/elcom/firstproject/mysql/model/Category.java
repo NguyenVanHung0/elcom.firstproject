@@ -5,6 +5,7 @@
 package com.elcom.firstproject.mysql.model;
 
 import com.elcom.firstproject.mysql.dto.CategoryWithBookCount;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -49,10 +50,18 @@ import lombok.Setter;
         )
     }
 )
-public class Category extends Base{
+public class Category extends Base implements Serializable{
     @Column
     private String name;
     
     @OneToMany(mappedBy = "category")
     private List<Book> books = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Category{" + "name=" + name + ", books=";
+    }
+
+    
+    
 }

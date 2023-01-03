@@ -12,4 +12,5 @@ public interface BorrowLogService {
     BorrowLogDto updateBorrowLog(Long id, BorrowLogDto borrowLogDto);
     BorrowLogWithTime countBorrowLogWithTime(BorrowLogWithTime borrowLogWithTime);
     List<BorrowLogNameWithTime> maxBorrowLogBook(BorrowLogNameWithTime borrowLogNameWithTime);
+    List<BorrowLogDto> getAllBorrowLog();
 }

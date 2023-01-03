@@ -5,6 +5,7 @@
 package com.elcom.firstproject.mysql.model;
 
 import com.elcom.firstproject.mysql.model.Base;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -19,7 +20,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User extends Base{
+public class User extends Base implements Serializable{
     @Column
     private String username;
     

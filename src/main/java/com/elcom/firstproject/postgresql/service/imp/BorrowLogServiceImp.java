@@ -82,4 +82,14 @@ public class BorrowLogServiceImp implements BorrowLogService {
         }
         return null;
     }
+
+    @Override
+    public List<BorrowLogDto> getAllBorrowLog() {
+        List<BorrowLog> listBorrowLog = borrowLogRepository.findAll();
+        List<BorrowLogDto> listResult = new ArrayList<>();
+        for(BorrowLog borrowLog : listBorrowLog){
+            listResult.add(mapper.toBorrowLogDto(borrowLog));
+        }
+        return listResult;
+    }
 }

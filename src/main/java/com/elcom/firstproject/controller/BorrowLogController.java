@@ -21,6 +21,11 @@ public class BorrowLogController {
     @Autowired
     BorrowLogService borrowLogService;
     
+//    @GetMapping("")
+//     ResponseEntity<?> createBorrowLog(){
+//        return ResponseEntity.ok(borrowLogService.getAllBorrowLog());
+//    }
+    
     @PostMapping("")
     ResponseEntity<?> createBorrowLog(@RequestBody BorrowLogDto borrowLogDto){
         return ResponseEntity.ok(borrowLogService.createBorrowLog(borrowLogDto));

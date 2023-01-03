@@ -5,6 +5,7 @@
 package com.elcom.firstproject.mysql.model;
 
 import com.elcom.firstproject.mysql.dto.AuthorWithBookCount;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -52,7 +53,7 @@ import lombok.Setter;
         )
     }
 )
-public class Author extends Base{
+public class Author extends Base implements Serializable{
     
     @Column
     private String name;
@@ -65,5 +66,12 @@ public class Author extends Base{
     
     @OneToMany(mappedBy = "author")
     private List<Book> books = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Author{" + "name=" + name + ", website=" + website + ", note=" + note + '}';
+    }
+    
+    
     
 }

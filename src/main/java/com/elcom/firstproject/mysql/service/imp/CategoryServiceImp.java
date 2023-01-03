@@ -1,5 +1,6 @@
 package com.elcom.firstproject.mysql.service.imp;
 
+import com.elcom.firstproject.auth.jwt.JwtTokenProvider;
 import com.elcom.firstproject.convert.Mapper;
 import com.elcom.firstproject.mysql.dto.CategoryDto;
 import com.elcom.firstproject.exception.NoSuchElementException;
@@ -9,7 +10,11 @@ import com.elcom.firstproject.mysql.service.CategoryService;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,9 +22,14 @@ public class CategoryServiceImp implements CategoryService {
 
     @Autowired
     CategoryRepository categoryRepository;
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenProvider.class);
 
     @Autowired
     Mapper mapper;
+    
+    @Autowired
+    private RedisTemplate template;
 
     @Override
     public List<CategoryDto> getListCategory() {
@@ -38,6 +48,10 @@ public class CategoryServiceImp implements CategoryService {
         Category category = categoryRepository.findById(id).orElse(null);
         CategoryDto categoryDto = new CategoryDto();
         if(category != null){
+            template.opsForHash().put("category", category.getId(), category);
+            template.expire("UniqueKey",30, TimeUnit.SECONDS);
+            LOGGER.info("them cache category co id: " + id);
+            LOGGER.info(template.opsForHash().get("category", category.getId()).toString());
             categoryDto = mapper.toCategoryDto(category);
             return categoryDto;
         }
