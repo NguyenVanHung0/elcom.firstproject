@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.elcom.firstproject.convert;
 
 import com.elcom.firstproject.mysql.dto.AuthorDto;
@@ -12,7 +9,9 @@ import com.elcom.firstproject.mysql.model.Author;
 import com.elcom.firstproject.mysql.model.Book;
 import com.elcom.firstproject.mysql.model.Category;
 import com.elcom.firstproject.mysql.model.User;
+import com.elcom.firstproject.postgresql.dto.BorrowLogDto;
 import com.elcom.firstproject.postgresql.dto.EmployeeDto;
+import com.elcom.firstproject.postgresql.model.BorrowLog;
 import com.elcom.firstproject.postgresql.model.Employee;
 import java.util.ArrayList;
 import java.util.List;
@@ -220,5 +219,45 @@ public class Mapper {
         employeeDto.setModifiedDate(employee.getModifiedDate());
         return employeeDto;
     }
-
+     
+     // BorrorLog
+     
+     public BorrowLog toBorrowLog(BorrowLogDto borrowLogDto){
+         if(borrowLogDto == null){
+             return null;
+         }
+         BorrowLog borrowLog = new BorrowLog();
+         borrowLog.setAuthorName(borrowLogDto.getAuthorName());
+         borrowLog.setBookName(borrowLogDto.getBookName());
+         borrowLog.setCategoryBook(borrowLogDto.getCategoryBook());
+         borrowLog.setUserName(borrowLogDto.getUserName());
+         borrowLog.setBorrowDate(borrowLogDto.getBorrowDate());
+         return borrowLog;
+     }
+     
+     public BorrowLog toBorrowLog(BorrowLog borrowLog, BorrowLogDto borrowLogDto){
+         if(borrowLogDto == null){
+             return null;
+         }
+         borrowLog.setAuthorName(borrowLogDto.getAuthorName());
+         borrowLog.setBookName(borrowLogDto.getBookName());
+         borrowLog.setCategoryBook(borrowLogDto.getCategoryBook());
+         borrowLog.setUserName(borrowLogDto.getUserName());
+         borrowLog.setBorrowDate(borrowLogDto.getBorrowDate());
+         return borrowLog;
+     }
+     
+     public BorrowLogDto toBorrowLogDto(BorrowLog borrowLog){
+         if(borrowLog == null){
+             return null;
+         }
+         BorrowLogDto borrowLogDto = new BorrowLogDto();
+         borrowLogDto.setId(borrowLog.getId());
+         borrowLogDto.setAuthorName(borrowLog.getAuthorName());
+         borrowLogDto.setBookName(borrowLog.getBookName());
+         borrowLogDto.setCategoryBook(borrowLog.getCategoryBook());
+         borrowLogDto.setUserName(borrowLog.getUserName());
+         borrowLogDto.setBorrowDate(borrowLog.getBorrowDate());
+         return borrowLogDto;
+     }
 }

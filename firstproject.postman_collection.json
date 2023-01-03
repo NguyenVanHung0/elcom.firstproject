@@ -312,6 +312,89 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "BorrowLog",
+			"item": [
+				{
+					"name": "createBorrowLog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Hung\",\r\n    \"authorName\": \"Hoang\",\r\n    \"bookName\": \"De men phieu luu ky\",\r\n    \"categoryBook\": \"ngu ngon\",\r\n    \"borrowDate\": \"2019-11-27\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/borrowlog"
+					},
+					"response": []
+				},
+				{
+					"name": "updateBorrowLog",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Tu\",\r\n    \"authorName\": \"Phuong\",\r\n    \"bookName\": \"book 6\",\r\n    \"categoryBook\": \"Tho\",\r\n    \"borrowDate\": \"2019-01-27\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/borrowlog/10"
+					},
+					"response": []
+				},
+				{
+					"name": "countOfBorrowLogWithTime",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateStart\": \"2019-01-01\",\r\n    \"dateEnd\": \"2019-07-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/borrowlog/countborrowlog"
+					},
+					"response": []
+				},
+				{
+					"name": "maxBorrowLogWithTime",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateStart\": \"2019-01-01\",\r\n    \"dateEnd\": \"2019-02-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/borrowlog/maxborrowlog"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
