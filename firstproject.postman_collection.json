@@ -30,7 +30,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:8080/author/4"
+						"url": "localhost:8080/author/2"
 					},
 					"response": []
 				},
@@ -98,7 +98,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:8080/category/2"
+						"url": "localhost:8080/category/1"
 					},
 					"response": []
 				},
@@ -391,6 +391,64 @@
 							}
 						},
 						"url": "localhost:8080/borrowlog/maxborrowlog"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rabbitmq",
+			"item": [
+				{
+					"name": "Worker",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"Nguyen Van Hung1\"",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": "localhost:8080/rabbitmq/worker"
+					},
+					"response": []
+				},
+				{
+					"name": "SubPub",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"Nguyen Van Hung2\""
+						},
+						"url": "localhost:8080/rabbitmq/subpub"
+					},
+					"response": []
+				},
+				{
+					"name": "Rpc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Nguyen Van Hung"
+						},
+						"url": "localhost:8080/rabbitmq/rpc"
 					},
 					"response": []
 				}
