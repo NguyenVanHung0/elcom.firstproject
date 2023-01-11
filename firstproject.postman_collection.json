@@ -177,7 +177,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"naruto\",\r\n    \"nhaXB\": \"Kim dong\",\r\n    \"namXB\": \"1999\",\r\n    \"firstText\": \"n\",\r\n    \"authorId\": 1,\r\n    \"categoryId\": 2\r\n}",
+							"raw": "{\r\n    \"name\": \"capnhat\",\r\n    \"nhaXB\": \"Kim dong1\",\r\n    \"namXB\": \"2001\",\r\n    \"firstText\": \"n\",\r\n    \"authorId\": 2,\r\n    \"categoryId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -211,7 +211,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:8080/book/3"
+						"url": "localhost:8080/book/17"
 					},
 					"response": []
 				},
@@ -239,6 +239,15 @@
 						"method": "GET",
 						"header": [],
 						"url": "localhost:8080/book/count/firsttext"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllBook",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/book"
 					},
 					"response": []
 				}
@@ -323,7 +332,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"Hung\",\r\n    \"authorName\": \"Hoang\",\r\n    \"bookName\": \"De men phieu luu ky\",\r\n    \"categoryBook\": \"ngu ngon\",\r\n    \"borrowDate\": \"2019-11-27\"\r\n}",
+							"raw": "{\r\n    \"userName\": \"Hung\",\r\n    \"authorName\": \"Hoang\",\r\n    \"bookName\": \"De men phieu luu ky3\",\r\n    \"categoryBook\": \"ngu ngon\",\r\n    \"borrowDate\": \"2023-01-10\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -449,6 +458,54 @@
 							"raw": "Nguyen Van Hung"
 						},
 						"url": "localhost:8080/rabbitmq/rpc"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Elasticsearch",
+			"item": [
+				{
+					"name": "getAllBook",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "naruto1"
+						},
+						"url": "localhost:8080/book/elas"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteIndexElasticsearch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:9200/book"
+					},
+					"response": []
+				},
+				{
+					"name": "getBookByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/book/elas/capnhat"
+					},
+					"response": []
+				},
+				{
+					"name": "getBookById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/book/elasid/18"
 					},
 					"response": []
 				}
