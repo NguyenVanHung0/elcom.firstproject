@@ -7,7 +7,9 @@ package com.elcom.firstproject.mysql.repository;
 
 import com.elcom.firstproject.mysql.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository("bookmysql")
 public interface BookRepository extends JpaRepository<Book, Long>{
 
     

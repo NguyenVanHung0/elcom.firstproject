@@ -1,6 +1,7 @@
 
 package com.elcom.firstproject.convert;
 
+import com.elcom.firstproject.elasticsearch.model.BookElas;
 import com.elcom.firstproject.mysql.dto.AuthorDto;
 import com.elcom.firstproject.mysql.dto.BookDto;
 import com.elcom.firstproject.mysql.dto.CategoryDto;
@@ -141,6 +142,53 @@ public class Mapper {
         bookDto.setFirstText(book.getFirstText());
         bookDto.setAuthorId(book.getAuthor().getId());
         bookDto.setCategoryId(book.getCategory().getId());
+        return bookDto;
+    }
+    
+     // BookElas
+    public BookElas toBookElas(BookDto bookDto) {
+        if (bookDto == null) {
+            return null;
+        }
+        BookElas book = new BookElas();
+        book.setNamXB(bookDto.getNamXB());
+        book.setName(bookDto.getName());
+        book.setNhaXB(bookDto.getNhaXB());
+        book.setFirstText(bookDto.getFirstText());
+        book.setAuthorId(bookDto.getAuthorId());
+        book.setCategoriId(bookDto.getCategoryId());
+        return book;
+    }
+
+    public BookElas toBookElas(BookElas book, BookDto bookDto) {
+        if (bookDto == null) {
+            return null;
+        }
+        book.setNamXB(bookDto.getNamXB());
+        book.setName(bookDto.getName());
+        book.setNhaXB(bookDto.getNhaXB());
+        book.setFirstText(bookDto.getFirstText());
+        book.setAuthorId(bookDto.getAuthorId());
+        book.setCategoriId(bookDto.getCategoryId());
+        return book;
+    }
+
+    public BookDto toBookDto(BookElas book) {
+        if (book == null) {
+            return null;
+        }
+        BookDto bookDto = new BookDto();
+        bookDto.setId(Long.parseLong(book.getId()));
+        bookDto.setCreatedBy(book.getCreatedBy());
+        bookDto.setCreatedDate(book.getCreatedDate());
+        bookDto.setModifiedBy(book.getModifiedBy());
+        bookDto.setModifiedDate(book.getModifiedDate());
+        bookDto.setNamXB(book.getNamXB());
+        bookDto.setName(book.getName());
+        bookDto.setNhaXB(book.getNhaXB());
+        bookDto.setFirstText(book.getFirstText());
+        bookDto.setAuthorId(book.getAuthorId());
+        bookDto.setCategoryId(book.getAuthorId());
         return bookDto;
     }
 

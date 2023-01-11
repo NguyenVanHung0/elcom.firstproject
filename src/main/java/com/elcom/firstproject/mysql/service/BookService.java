@@ -14,6 +14,7 @@ public interface BookService {
     BookDto createBook(BookDto bookDto);
     BookDto updateBook(Long id, BookDto bookDto);
     BookDto deleteBook(Long id);
+    String deleteAllBook();
     List<AuthorWithBookCount> AuthorWithBookCount();
     List<CategoryWithBookCount> CategoryWithBookCount();
     List<FirstTextWithBookCount> FirstTextWithBookCount();

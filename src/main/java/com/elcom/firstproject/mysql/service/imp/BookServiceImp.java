@@ -19,12 +19,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BookServiceImp implements BookService {
 
     @Autowired
+    @Qualifier("bookmysql")
     BookRepository bookRepository;
 
     @Autowired
@@ -150,6 +152,16 @@ public class BookServiceImp implements BookService {
                 .createNamedQuery("FirstTextWithBookCount")
                 .getResultList();
         return FirstTextWithBookCount;
+    }
+
+    @Override
+    public String deleteAllBook() {
+        try {
+            bookRepository.deleteAll();
+        } catch (Exception e) {
+            return "co loi: " + e.getMessage();
+        }
+        return "Xoa thanh cong";
     }
 
 }

@@ -11,6 +11,9 @@ public interface BorrowLogRepository extends JpaRepository<BorrowLog, Long> {
 
     @Query(value = "select count(*) from borrow_log where borrow_date between ?1 and ?2", nativeQuery = true)
     Long countNumberOfBorrowLog(Date dateStart, Date dateEnd);
+    
+    @Query(value = "select count(*) from borrow_log where borrow_date = ?1", nativeQuery = true)
+    Long countNumberOfBorrowLogLastDay(Date date);
 
     @Query(
             name = "maxBorrowLogBook",
