@@ -71,6 +71,7 @@ public class SendEmail {
             Logger.getLogger(SendEmail.class.getName()).log(Level.SEVERE, null, ex);
         }
         return count;
+
     }
 
 }

@@ -120,6 +120,7 @@
     </dependencies>
 
     <build>
+        <finalName>${artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -127,6 +128,10 @@
             </plugin>
         </plugins>
     </build>
+    
+   
+    
+    
     <repositories>
         <repository>
             <id>spring-milestones</id>
